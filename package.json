@@ -9,11 +9,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
     "bootstrap": "^4.5.3",
     "core-js": "^3.8.2",
     "nodemon": "^2.0.7",
     "nuxt": "^2.14.12"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

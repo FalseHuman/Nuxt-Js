@@ -17,9 +17,14 @@
             Основное
         </nuxt-link>
       </li>
-            <li class="nav-item">
+        <li class="nav-item">
         <nuxt-link active-class="active" class="nav-link" to="/users">
             Пользователи
+        </nuxt-link>
+      </li>
+        <li class="nav-item">
+        <nuxt-link active-class="active" class="nav-link" to="/login">
+            Регистрация
         </nuxt-link>
       </li>
     </ul>
