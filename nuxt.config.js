@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Тест Nuxt',
+    title: 'Ознакомление с Nuxt',
     htmlAttrs: {
       lang: 'ru'
     },
@@ -14,6 +14,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
     ]
   },
+
+  loading: { color: "red"},
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

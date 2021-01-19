@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h1>Страница пользователей</h1>
+    <h1>{{ PageTitle }}</h1>
 
     <ul>
       <li v-for="user of users" :key="user.id">
@@ -11,15 +11,22 @@
 </template>
 <script>
 export default {
+  async fetch({store}) {
+    if (store.getters['users/users'].length === 0) {
+      await store.dispatch('users/fetch')
+    }
+  },
   data: () => ({
-  users: []
+    PageTitle: 'Страница пользователей',
 }),
-async mounted() {
-  this.users = await this.$axios.$get('http://jsonplaceholder.typicode.com/users')
-},
+  computed: {
+    users() {
+      return this.$store.getters['users/users']
+    }
+  },
     methods:{
         openUser(user){
-            this.$router.push('/users/' + user)
+            this.$router.push('/users/' + user.id)
         }
     }
 }

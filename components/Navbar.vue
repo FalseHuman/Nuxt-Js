@@ -22,12 +22,33 @@
             Пользователи
         </nuxt-link>
       </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="!hasToken">
         <nuxt-link active-class="active" class="nav-link" to="/login">
             Регистрация
         </nuxt-link>
+      </li>
+        <li class="nav-item" v-else>
+        <a @click.prevent="logout" class="nav-link" href="#">
+            Выход
+        </a>
       </li>
     </ul>
   </div>
 </nav>
 </template>
+<script>
+export default {
+     computed:{
+       hasToken(){
+           return this.$store.getters.hasToken
+       }
+   },
+   methods:{
+       OnSubmit(){
+           this.$store.dispath('login'),
+           this.$router.push('/')
+       }
+
+   }
+}
+</script>

@@ -1,6 +1,9 @@
 <template>
     <section>
-    <form>
+    <div v-if="$route.query.message" class="alert alert-danger mb-4">
+      Need login first
+    </div>
+    <form @submit.prevent="OnSubmit">
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -14,8 +17,3 @@
     </form>
     </section>
 </template>
-<script>
-export default {
-    layout: 'loginpage'
-}
-</script>
